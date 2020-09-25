@@ -1,0 +1,162 @@
+@import '../../styles/breakpoint.scss';
+
+.Foods{
+    padding: 30px 20px 30px 20px;    
+    width: 100%;
+    box-sizing: border-box;
+
+    h2{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+
+        color: #303030;
+    }
+
+    p{        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        color: #707070;
+        margin-top: 10px;
+    }
+
+    .frameFood{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);      
+        grid-gap: 20px; 
+        width: 100%;
+        margin-top: 30px;
+        
+
+        .foodCard{            
+            width: 100%;
+            cursor: pointer;
+
+            .arrow{
+                transition:transform 1s;
+            }
+            &:hover .arrow{
+                transform: translateX(10px);
+            }
+        }
+
+        .foodImageContainer{            
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+
+            img:nth-child(1){
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .brandContainer{                
+                position: absolute;
+                top:10px;
+                left:10px;  
+                width: 50px;
+                height: 50px;                                                
+
+                img{
+                    width: 100%;                                        
+                }
+            }            
+        }
+
+        .foodInfo{
+            
+            div{
+                display: flex;
+                align-items: center;  
+                
+                p{
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #303030;
+                    margin:0;
+                }
+            }
+
+            p{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 10px;
+                line-height: 15px;
+                color: #5A5A5A;
+                margin:0;
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width: $breakpoint-tablet) {
+   .Foods{
+    padding: 30px 30px 30px 30px;   
+   }
+}
+
+@media (min-width: $breakpoint-laptop) {
+   .Foods{
+    padding: 30px 50px 30px 50px;  
+    
+        h2{            
+            font-size: 30px;
+            line-height: 50px;                    
+        }
+
+        .frameFood{
+            grid-template-columns: repeat(3,1fr);
+
+            .foodCard:nth-child(4){
+                display: none;
+            }
+        }        
+   }
+}
+
+@media (min-width: $breakpoint-laptop-large) {
+   .Foods{
+    padding: 30px 150px 30px 150px;   
+
+        h2{      
+            font-size: 40px;
+            line-height: 60px;                    
+        }
+
+        .paragraphTitle{
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+
+        .frameFood{
+            grid-gap: 30px;
+
+            .foodCard{
+
+                .foodInfo{
+                    div{
+                        p{
+                            font-size: 32px;
+                            line-height: 39px;
+                            margin:0;
+                        }
+                    }
+                    p{
+                        font-size: 24px;
+                        line-height: 29px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+   }
+}

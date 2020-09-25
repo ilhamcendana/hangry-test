@@ -1,0 +1,190 @@
+@import '../../styles/breakpoint.scss';
+
+//Header Banner
+
+.HeaderBanner{
+    width: 100%;
+    background-color:#fafafa;
+    position: relative;   
+    padding-left: 20px;
+    box-sizing: border-box;
+    overflow:hidden;
+    
+
+    .container{
+        width: 100%;
+        position: relative;
+        height:300px;
+        display: flex;
+        align-items: center;
+
+        .greetingText{
+            width: 50%;
+            opacity: 0;
+            animation:fadeIn .3s 1s forwards;
+    
+            h3{            
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 21px;            
+                color: #303030;
+                opacity: 0.8;
+            }
+    
+            h1{            
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 30px;
+                margin:10px 0 25px 0;
+            }
+
+            .appPlay{
+                display: flex;                
+                width: 100%;
+
+
+                a img{
+                    width: 100%;
+                    cursor: pointer;
+                }
+                a:nth-child(1) img{
+                    display: none;
+                }          
+            }
+        } 
+
+        .phoneFrame{
+            position: absolute;
+            bottom: -42px; 
+            right: -50px;
+            width: 150px;  
+            animation: phoneAppear 1s;                        
+
+            .phone{
+                width: 100%;                
+            }
+        }
+    }  
+}
+
+
+
+
+@media (min-width: $breakpoint-tablet) {
+    .HeaderBanner{
+        padding: 0px 30px;
+
+        .container{            
+            padding:20px 0; 
+
+            .greetingText{
+
+                .appPlay{   
+                    
+                    a{
+                        width: 45%;
+                        margin-right: 10px;
+                        img{
+                            width: 100%;                            
+                        }
+                    }                    
+                    a:nth-child(1) img{
+                        display: block;
+                    }
+                }
+            }
+            
+            .phoneFrame{                
+                bottom: -120px;        
+                width:200px;   
+                right:0;       
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-laptop) {
+    .HeaderBanner{
+        padding: 0px 50px;
+
+        .container{
+            height:500px;
+
+            .greetingText{
+                width:45%;
+
+                h3{
+                    font-size: 14px;  
+                    font-weight: 700;
+                }
+
+                h1{
+                    font-size: 34px;
+                    line-height: 50px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-laptop-large) {
+    .HeaderBanner{
+        padding: 0px 150px;
+
+        .container{
+            height:500px;
+
+            .greetingText{
+                width:45%;                
+
+                p{
+                    font-size: 20px;  
+                    font-weight: 700;
+                }
+
+                p{
+                    font-size: 40px;
+                    line-height: 60px;
+                    font-weight: 600;
+                }
+
+                .appPlay{
+                    margin-top: 50px;
+                }
+            }
+
+            .phoneFrame{
+                width:280px;
+                bottom:-200px;
+                right: 50px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+//animation
+@keyframes phoneAppear{
+    from{
+        transform: translateY(500px);        
+    }
+    to{
+        transform: translateY(0);        
+    }
+}
+
+@keyframes fadeIn{
+    from{
+       opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
